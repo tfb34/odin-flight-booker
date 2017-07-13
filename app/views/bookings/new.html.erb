@@ -1,5 +1,6 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+
+<h1>Passenger Information</h1>
+
 
 <p><b>Flight ID</b> <%= @flight.id%></p>
 <p><b>Date</b> <%= @flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%></p>
@@ -7,10 +8,12 @@
 <p><b>To</b> <%= @flight.to_airport.code%></p>
 <p><b>Tickets</b> <%= params[:num_tickets]%></p>
 
+
 <%= form_for @booking do |f| %>
 	<%= f.hidden_field :flight_id, :value => params[:flight_id] %>
 	<%= f.hidden_field :num_tickets, :value => params[:num_tickets]%>
-	Passengers:
+
+	<p><b>Passengers:</b></p>
 	<ul>
 		<%= f.fields_for :passengers do |passenger_form| %>
 			<%= passenger_form.label :name %>

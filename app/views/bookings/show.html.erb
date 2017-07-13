@@ -1,9 +1,15 @@
-<p><b>Flight ID</b> <%=@booking.flight.id%></p>
-<p><b>Date</b> <%=@booking.flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%></p>
-<p><b>Departing from</b> <%=@booking.flight.from_airport.code%></p>
-<p><b>Arriving to</b> <%=@booking.flight.to_airport.code%></p>
 
-<h4>Passengers:</h4>
-<%@booking.passengers.each do |p|%>
-	<p><b>Name</b> <%=p.name%> <b>Email</b> <%=p.email%></p>
-<%end%>
+<div class = "booking-info">
+	<h2>Booking Information</h2>
+	<p><b>Flight ID</b> <%=@booking.flight.id%></p>
+	<p><b>Date</b> <%=@booking.flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%></p>
+	<p><b>Departing from</b> <%=@booking.flight.from_airport.code%></p>
+	<p><b>Arriving to</b> <%=@booking.flight.to_airport.code%></p>
+
+	
+	<h4>Passengers:</h4>
+	<%@booking.passengers.each do |p|%>
+		<p><b>Name</b> <%=p.name%> <b>Email</b> <%=p.email%></p>
+	<%end%>
+
+</div>

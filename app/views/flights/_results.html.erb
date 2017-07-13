@@ -3,14 +3,41 @@
 <%if @results.empty?%>
 	<p>No results found.</p>
 <%else%>
-	<%=form_tag new_booking_path, :method => 'get' do%>
-		<%=hidden_field_tag 'num_tickets', params[:passengers]%>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Flight ID</th>
+				<th>Departure Date</th>
+				<th>From</th>
+			    <th>To</th>
+			    <th> </th>
+			</tr>
+		</thead>
 
-		<%@results.each do |f|%>
-			<%= label_tag 'flight_id', f.from_airport.code%> to <%=f.to_airport.code%>, <%=f.departure_date.to_formatted_s(:long)%>
-			<%=radio_button_tag 'flight_id', f.id%><br>
-		<%end%>
-
-		<%=submit_tag('continue')%>
-	<%end%>
+		<tbody>
+			<%=form_tag new_booking_path, :method => 'get' do%>
+				
+				<%=hidden_field_tag 'num_tickets', params[:passengers]%>		
+				
+				<%@results.each do |f|%>
+					<tr>
+						
+						<td><%=f.id%></td>
+						<td><%=f.departure_date.to_formatted_s(:long)%></td>
+						<td><%=f.from_airport.code%></td>
+						<td><%=f.to_airport.code%></td>
+						<td><%=radio_button_tag 'flight_id', f.id%></td>
+					</tr>
+					
+				<%end%>
+				<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><%=submit_tag('continue')%></td></tr>
+			<%end%>
+		</tbody>
+		
+	</table>
 <%end%>
