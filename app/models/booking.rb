@@ -4,3 +4,5 @@ class Booking < ApplicationRecord
 
 	has_one :flight
 end
+
+

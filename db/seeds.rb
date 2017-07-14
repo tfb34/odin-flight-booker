@@ -17,7 +17,7 @@ end
  #creating flight objects
 (Airport.count-1).times do |x|
 	(x+1).upto(Airport.count-1) do |i|
-		4.times do 
+		10.times do 
 			from = Airport.all[x]
 			to = Airport.all[i]
 			depart = Faker::Time.forward(100)
