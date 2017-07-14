@@ -10,14 +10,14 @@ class BookingsController < ApplicationController
   def create
      #create and save booking, build_flight, passenegers.build
      @booking = Booking.new(booking_params)
-  	
+  	 @booking.flight = Flight.find_by(id: params[:booking][:flight_id])
+     
   	 if @booking.save
-  	 	@booking.flight = Flight.find_by(id: params[:booking][:flight_id])
   	 	flash[:success] = "Successfully booked flight."
   	 	redirect_to @booking
   	 else
-        flash.now[:danger] = "An error has occurred. Please try again."
-        render 'new'
+        flash[:warning] = "An error has occurred. Please try again."
+        redirect_to root_path
   	 end
   	 
   end

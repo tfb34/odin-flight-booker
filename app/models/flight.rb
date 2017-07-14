@@ -2,8 +2,9 @@ class Flight < ApplicationRecord
 
 	belongs_to :from_airport, :class_name => "Airport"
 	belongs_to :to_airport, :class_name => "Airport"
-	belongs_to :booking
-
+	#belongs_to :booking
+	has_many :bookings
+	
 	def self.search(params)
 		date = params[:date]
 		#d = date[:day]+"-"+date[:month]+"-"+date[:year]
