@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid no-padding">
     	<%flash.each do|type, msg| %>
         <div class = "alert alert-<%=type%>">
     		  <strong><%=type%>!</strong> <%=msg%>
@@ -18,5 +18,9 @@
 
       <%= yield %>
     </div>
+
+     <h1 id= "home-icon" title="home">
+      <a href=<%=root_path%>><span class="glyphicon glyphicon-home"></span></a>
+    </h1>
   </body>
 </html>

@@ -5,6 +5,8 @@ class Flight < ApplicationRecord
 	#belongs_to :booking
 	has_many :bookings
 	
+	validates :departure_date, presence:true
+	
 	def self.search(params)
 		date = params[:date]
 		#d = date[:day]+"-"+date[:month]+"-"+date[:year]

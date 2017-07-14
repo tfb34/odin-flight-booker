@@ -1,27 +1,29 @@
-
-<h1>Passenger Information</h1>
-
-
-<p><b>Flight ID</b> <%= @flight.id%></p>
-<p><b>Date</b> <%= @flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%></p>
-<p><b>From</b> <%= @flight.from_airport.code%></p>
-<p><b>To</b> <%= @flight.to_airport.code%></p>
-<p><b>Tickets</b> <%= params[:num_tickets]%></p>
+<div class="passenger-info">
+	<h1>Passenger Information</h1>
 
 
-<%= form_for @booking do |f| %>
-	<%= f.hidden_field :flight_id, :value => params[:flight_id] %>
-	<%= f.hidden_field :num_tickets, :value => params[:num_tickets]%>
+	<p><b>Flight ID</b> <%= @flight.id%></p>
+	<p><b>Date</b> <%= @flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%></p>
+	<p><b>From</b> <%= @flight.from_airport.code%></p>
+	<p><b>To</b> <%= @flight.to_airport.code%></p>
+	<p><b>Tickets</b> <%= params[:num_tickets]%></p>
 
-	<p><b>Passengers:</b></p>
-	<ul>
-		<%= f.fields_for :passengers do |passenger_form| %>
-			<%= passenger_form.label :name %>
-			<%= passenger_form.text_field :name %>
 
-			<%= passenger_form.label :email %>
-			<%= passenger_form.email_field :email%><br>
-		<%end%>
-	</ul>
-	<%=f.submit%>
-<%end%>
+	<%= form_for @booking do |f| %>
+		<%= f.hidden_field :flight_id, :value => params[:flight_id] %>
+		<%= f.hidden_field :num_tickets, :value => params[:num_tickets]%>
+
+		<p><b>Passengers:</b></p>
+		<ul>
+			<%= f.fields_for :passengers do |passenger_form| %>
+				<%= passenger_form.label :name %>
+				<%= passenger_form.text_field :name %>
+
+				<%= passenger_form.label :email %>
+				<%= passenger_form.email_field :email%><br>
+			<%end%>
+		</ul>
+		<%=f.submit%>
+	<%end%>
+
+</div>
