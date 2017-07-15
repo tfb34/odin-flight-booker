@@ -2,8 +2,8 @@
 @import "bootstrap";
 
 .no-padding{
-	padding-left: 0;
-	padding-right:0;
+	padding-left: 0px;
+	padding-right:0px;
 }
 
 
@@ -11,9 +11,17 @@ body{
 	background-image: url("https://images.trvl-media.com/media/content/expus/graphics/launch/activity1320x742.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow-x: hidden;
 }
 
 
+#home-icon{
+	position: relative;
+	padding-left:85%;
+	padding-top:10%;
+	border: 1px solid red;
+	
+}
 .form-horizontal{
    border-top: 1px solid lightgrey;
    padding-left: 5%;
@@ -35,7 +43,7 @@ body{
 	background: white;
 	border: 2px solid grey;
 	width: 40%;
-	min-width: 200px;
+	
 	margin-top: 6%;
 	margin-left: 5%;
 	margin-bottom: 5%;
@@ -50,7 +58,6 @@ table{
 }
 
 .passenger-info{
-	
 	padding-left: 5%;
 	padding-top: 2%;
 	label{
@@ -58,12 +65,7 @@ table{
 	}
 }
 
-#home-icon{
-	position: relative;
-	padding-left:95%;
-	padding-top:10%;
-	
-}
+
 
 span.glyphicon.glyphicon-home{
 	color: white;
