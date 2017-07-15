@@ -13,14 +13,16 @@
 		<%= f.hidden_field :flight_id, :value => params[:flight_id] %>
 		<%= f.hidden_field :num_tickets, :value => params[:num_tickets]%>
 
-		<p><b>Passengers:</b></p>
+		<p><b>Passengers</b></p>
 		<ul>
 			<%= f.fields_for :passengers do |passenger_form| %>
+
 				<%= passenger_form.label :name %>
-				<%= passenger_form.text_field :name %>
+				<%= passenger_form.text_field :name %><br>
 
 				<%= passenger_form.label :email %>
 				<%= passenger_form.email_field :email%><br>
+				<br>
 			<%end%>
 		</ul>
 		<%=f.submit%>
