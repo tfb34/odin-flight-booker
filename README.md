@@ -1,8 +1,17 @@
 # README
 
-Attempting to create a one-way flight booker application. User will enter a date/airport in the search bar, and the application will show user a list of eligible flights. Upon selecting a flight, user will enter his/her information.
+<h3>Objective</h3>
+<p>Create a one-way flight booker application.</p>
 
-This app is made for learning purposes and in no way makes any real-world flight transactions. 
+<h3>Why?</h3>
+<p>Learning how to populate and build dropdown menus, radio buttons, and nested submissions</p>
+<h3>How does it work?</h3>
+<p>User will choose two airports, number of passengers(max. 4),departure date, and the application will show the user a list of eligible flights, if any. Upon selecting a flight, user will then enter his/her information(name and email).</p>
 
-Learning:
-	populating and building dropdown menus, radio buttons, and nested submissions
+<h3>Deployed</h3>
+<a href="https://odinflightbooker.herokuapp.com/">https://odinflightbooker.herokuapp.com</a>
+
+*This app is made for learning purposes and in no way makes any real-world flight transactions. ^_^
+
+	
+<h5>For more infomation, visit <a href="https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms">theodinproject</a></h5>
