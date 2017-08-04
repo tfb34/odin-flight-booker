@@ -1,0 +1,14 @@
+Thank you, <%= @passenger.name %>
+========================================
+
+You have successfully booked flight #<%= @passenger.booking.flight.id%>!
+
+
+Booking Information
+     Flight ID | <%=@passenger.booking.flight.id%>
+          Date | <%=@passenger.booking.flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%>
+Departing from | <%=@passenger.booking.flight.from_airport.code%>
+   Arriving to | <%=@passenger.booking.flight.to_airport.code%>
+
+
+

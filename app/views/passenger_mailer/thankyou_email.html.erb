@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+	<h4>Thank you, <%= @passenger.name%></h4>
+	<p>
+		You have successfully booked flight #<%= @passenger.booking.flight.id%>!
+	</p><br>
+
+	<h3>Booking Information</h3>
+	<p>Flight ID : <%=@passenger.booking.flight.id%></p>
+	<p>Date : <%=@passenger.booking.flight.departure_date.strftime("%m/%d/%y at %I:%M%p")%></p>
+	<p>Departing from : <%=@passenger.booking.flight.from_airport.code%></p>
+	<p>Arriving to : <%=@passenger.booking.flight.to_airport.code%></p>
+	
+	<a href=" https://odinflightbooker.herokuapp.com"> https://odinflightbooker.herokuapp.com</a>
+</body>
+</html>

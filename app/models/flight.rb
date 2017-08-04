@@ -7,6 +7,10 @@ class Flight < ApplicationRecord
 	
 	validates :departure_date, presence:true
 	
+	def info
+		"From: #{from_airport.code} | To: #{to_airport.code} | Departing: #{departure_date}"
+	end
+
 	def self.search(params)
 		date = params[:date]
 		#d = date[:day]+"-"+date[:month]+"-"+date[:year]

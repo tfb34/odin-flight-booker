@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
      
   	 if @booking.save
   	 	flash[:success] = "Successfully booked flight."
-  	 	redirect_to @booking
+      send_email(@booking.passengers)
+      redirect_to @booking
   	 else
         flash[:warning] = "An error has occurred. Please try again."
         redirect_to root_path
@@ -31,5 +32,12 @@ class BookingsController < ApplicationController
 
   def booking_params
   	params.require(:booking).permit(passengers_attributes: [:name, :email])
+  end
+
+  def send_email(passengers)
+    passengers.each do |p|
+      @passenger = p
+      PassengerMailer.thankyou_email(@passenger).deliver_now
+    end
   end
 end
